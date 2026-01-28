@@ -1,37 +1,10 @@
 import { Link } from 'react-router-dom';
+import HeroSection from '../components/HeroSection';
 
 const Home = () => {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-32 md:py-40">
-        <div className="max-w-[1335px] mx-auto w-full px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Excellence in Sports, 
-              <span className="text-yellow-400"> Excellence in Life</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">
-              Join Gandhinagar Sports Academy and train with the best. 
-              World-class facilities, expert coaches, and a legacy of champions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/admissions"
-                className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-300 transition-colors text-center"
-              >
-                Enroll Now
-              </Link>
-              <Link
-                to="/programs"
-                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors text-center"
-              >
-                Explore Programs
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Key Features */}
       <section className="py-20 bg-gray-50">
