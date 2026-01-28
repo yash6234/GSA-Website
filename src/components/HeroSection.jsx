@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const SLIDE_IMAGES = [
-  '/adani-sportsline-cricket-academy-shantigram-gandhinagar-gujarat-institutes-for-sports-va1z7ldx4y-250.webp',
+  '/slide-1.webp',
   '/slide-2.webp',
   '/slide-3.webp',
 ];
 
-const ROTATE_INTERVAL_MS = 5000;
+const ROTATE_INTERVAL_MS = 2000;
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
