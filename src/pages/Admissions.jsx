@@ -51,25 +51,36 @@ const Admissions = () => {
     'Volleyball'
   ];
 
+  const inputClass = 'w-full px-4 py-3.5 bg-gray-50/80 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 focus:bg-white transition-all duration-200';
+  const labelClass = 'block text-sm font-semibold text-gray-800 mb-2';
+
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
-        <div className="max-w-[1335px] mx-auto w-full px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Admissions & Enquiry</h1>
-          <p className="text-xl text-blue-100 max-w-3xl">
-            Take the first step towards excellence. Fill out the form below and our team will 
-            get back to you with all the information you need to begin your journey at GSA.
+      {/* Hero Section - modern sports academy */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-24 md:py-32">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-500/10 via-transparent to-transparent" aria-hidden />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-80" aria-hidden />
+        <div className="relative max-w-[1335px] mx-auto w-full px-4">
+          <p className="text-cyan-400 font-semibold tracking-widest uppercase text-sm mb-4">Start Your Journey</p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+            Admissions & Enquiry
+          </h1>
+          <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
+            Take the first step towards excellence. Fill out the form below and our team will
+            get back to you with everything you need to begin your sports journey at GSA.
           </p>
         </div>
       </section>
 
-      {/* Admission Process */}
-      <section className="py-20">
+      {/* Admission Process - modern cards */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-[1335px] mx-auto w-full px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
-            Admission Process
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+            How It Works
           </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-xl mx-auto">
+            From enquiry to enrollment — a simple path to joining our academy.
+          </p>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { step: '01', title: 'Submit Enquiry', desc: 'Fill out the admission form with your details' },
@@ -77,27 +88,31 @@ const Admissions = () => {
               { step: '03', title: 'Trial Session', desc: 'Attend a trial session to experience our training' },
               { step: '04', title: 'Enrollment', desc: 'Complete enrollment and begin your training journey' }
             ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+              <div
+                key={index}
+                className="group relative p-6 rounded-2xl bg-white border border-gray-200 shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white flex items-center justify-center text-lg font-bold shadow-lg shadow-cyan-500/25 mb-5 ring-2 ring-white">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-bold mb-2 text-gray-900">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Enquiry Form */}
-      <section className="py-20 bg-gray-50">
+      {/* Enquiry Form - modern card */}
+      <section className="py-20">
         <div className="max-w-[1335px] mx-auto w-full px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg">
-              <h2 className="text-3xl font-bold mb-8 text-gray-900">Enquiry Form</h2>
-              
+            <div className="bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-xl shadow-gray-200/50">
+              <h2 className="text-3xl font-bold mb-2 text-gray-900">Enquiry Form</h2>
+              <p className="text-gray-600 mb-8">Tell us about the athlete and the sport they want to learn.</p>
+
               {submitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+                <div className="rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/80 p-8 text-center shadow-inner">
                   <svg className="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -110,9 +125,7 @@ const Admissions = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="studentName" className="block text-sm font-semibold text-gray-700 mb-2">
-                        Student Name *
-                      </label>
+                      <label htmlFor="studentName" className={labelClass}>Student Name *</label>
                       <input
                         type="text"
                         id="studentName"
@@ -120,15 +133,13 @@ const Admissions = () => {
                         value={formData.studentName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                        className={inputClass}
                         placeholder="Enter student's full name"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="parentName" className="block text-sm font-semibold text-gray-700 mb-2">
-                        Parent/Guardian Name *
-                      </label>
+                      <label htmlFor="parentName" className={labelClass}>Parent/Guardian Name *</label>
                       <input
                         type="text"
                         id="parentName"
@@ -136,7 +147,7 @@ const Admissions = () => {
                         value={formData.parentName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                        className={inputClass}
                         placeholder="Enter parent/guardian name"
                       />
                     </div>
@@ -144,9 +155,7 @@ const Admissions = () => {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                        Email Address *
-                      </label>
+                      <label htmlFor="email" className={labelClass}>Email Address *</label>
                       <input
                         type="email"
                         id="email"
@@ -154,15 +163,13 @@ const Admissions = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                        className={inputClass}
                         placeholder="your.email@example.com"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                        Phone Number *
-                      </label>
+                      <label htmlFor="phone" className={labelClass}>Phone Number *</label>
                       <input
                         type="tel"
                         id="phone"
@@ -170,7 +177,7 @@ const Admissions = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                        className={inputClass}
                         placeholder="+91 XXXXX XXXXX"
                       />
                     </div>
@@ -178,9 +185,7 @@ const Admissions = () => {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="age" className="block text-sm font-semibold text-gray-700 mb-2">
-                        Student Age *
-                      </label>
+                      <label htmlFor="age" className={labelClass}>Student Age *</label>
                       <input
                         type="number"
                         id="age"
@@ -190,22 +195,20 @@ const Admissions = () => {
                         required
                         min="5"
                         max="25"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                        className={inputClass}
                         placeholder="Age in years"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="sport" className="block text-sm font-semibold text-gray-700 mb-2">
-                        Sport of Interest *
-                      </label>
+                      <label htmlFor="sport" className={labelClass}>Sport of Interest *</label>
                       <select
                         id="sport"
                         name="sport"
                         value={formData.sport}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                        className={inputClass}
                       >
                         <option value="">Select a sport</option>
                         {sports.map((sport) => (
@@ -218,15 +221,13 @@ const Admissions = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="experience" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Previous Experience
-                    </label>
+                    <label htmlFor="experience" className={labelClass}>Previous Experience</label>
                     <select
                       id="experience"
                       name="experience"
                       value={formData.experience}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                      className={inputClass}
                     >
                       <option value="">Select experience level</option>
                       <option value="beginner">Beginner - No prior experience</option>
@@ -236,23 +237,21 @@ const Admissions = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Additional Message
-                    </label>
+                    <label htmlFor="message" className={labelClass}>Additional Message</label>
                     <textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       rows="4"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"
+                      className={`${inputClass} resize-none`}
                       placeholder="Any questions or specific requirements..."
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors"
+                    className="w-full py-4 rounded-xl font-semibold text-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:from-cyan-400 hover:to-blue-500 transition-all duration-300"
                   >
                     Submit Enquiry
                   </button>
@@ -263,11 +262,11 @@ const Admissions = () => {
         </div>
       </section>
 
-      {/* Additional Information */}
-      <section className="py-20">
+      {/* Additional Information - modern cards */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-[1335px] mx-auto w-full px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-blue-50 p-8 rounded-lg">
+            <div className="p-8 rounded-2xl bg-white border border-gray-200 shadow-lg shadow-gray-200/50 hover:border-cyan-500/30 transition-colors">
               <h3 className="text-2xl font-bold mb-4 text-gray-900">What to Expect</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
@@ -297,7 +296,7 @@ const Admissions = () => {
               </ul>
             </div>
 
-            <div className="bg-gray-50 p-8 rounded-lg">
+            <div className="p-8 rounded-2xl bg-white border border-gray-200 shadow-lg shadow-gray-200/50 hover:border-cyan-500/30 transition-colors">
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Requirements</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">

@@ -1,0 +1,58 @@
+import { Link } from 'react-router-dom';
+
+const PROGRAM_CARDS = [
+  { label: 'CRICKET', title: 'Cricket', image: '/image%20for%20welcome_files/cricket.jpg' },
+  { label: 'TENNIS', title: 'Tennis', image: '/image%20for%20welcome_files/tennis.jpg' },
+  { label: 'FOOTBALL', title: 'Football', image: '/football.webp' },
+  { label: 'BADMINTON', title: 'Badminton', image: '/image%20for%20welcome_files/badminton.jpg' },
+  { label: 'BASKETBALL', title: 'Basketball', image: '/image%20for%20welcome_files/basketball.jpg' },
+  { label: 'VOLLEYBALL', title: 'Volleyball', image: '/image%20for%20welcome_files/vallyball-img.jpg' },
+  { label: 'SWIMMING', title: 'Swimming', image: '/image%20for%20welcome_files/swimming.jpg' },
+  { label: 'PICKLEBALL', title: 'Pickleball', image: '/pickleball.webp' },
+];
+
+const ProgramsImageCards = () => {
+  return (
+    <section className="py-14 md:py-20 bg-gray-50">
+      <div className="max-w-[1335px] mx-auto w-full px-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {PROGRAM_CARDS.map((card) => (
+            <Link
+              key={card.label}
+              to="/admissions"
+              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md shadow-gray-200/60 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+              aria-label={`Read more about ${card.title}`}
+            >
+              <div className="relative h-[200px] md:h-[220px]">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* soft dark overlay like reference */}
+                <div className="absolute inset-0 bg-black/20" aria-hidden />
+              </div>
+
+              {/* Top label (black tag) */}
+              <div className="absolute top-3 left-1/2 -translate-x-1/2">
+                <span className="inline-flex items-center px-3 py-1 bg-black text-white text-[11px] font-semibold tracking-widest">
+                  {card.label}
+                </span>
+              </div>
+
+              {/* Read more button (lime, matches current design) */}
+              {/* <div className="absolute bottom-3 left-3">
+                <span className="inline-flex items-center px-4 py-2 bg-lime-500 text-black text-sm font-semibold shadow-sm group-hover:bg-lime-400 transition-colors">
+                  Read more
+                </span>
+              </div> */}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProgramsImageCards;
+

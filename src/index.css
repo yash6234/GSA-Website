@@ -1,3 +1,4 @@
+/* Tailwind directives - processed by PostCSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,11 +7,11 @@
   * {
     @apply box-border;
   }
-  
+
   body {
-    @apply font-sans antialiased text-gray-900;
+    @apply font-sans antialiased text-gray-900 bg-gray-50;
   }
-  
+
   html {
     @apply scroll-smooth;
   }
