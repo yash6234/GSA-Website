@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PageHero from '../components/PageHero';
 
 const Admissions = () => {
   const [formData, setFormData] = useState({
@@ -56,21 +57,12 @@ const Admissions = () => {
 
   return (
     <>
-      {/* Hero Section - modern sports academy */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-24 md:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-500/10 via-transparent to-transparent" aria-hidden />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-80" aria-hidden />
-        <div className="relative max-w-[1335px] mx-auto w-full px-4">
-          <p className="text-cyan-400 font-semibold tracking-widest uppercase text-sm mb-4">Start Your Journey</p>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-            Admissions & Enquiry
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
-            Take the first step towards excellence. Fill out the form below and our team will
-            get back to you with everything you need to begin your sports journey at GSA.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Start Your Journey"
+        title="Admissions & Enquiry"
+        subtitle="Take the first step towards excellence. Fill out the form below and our team will get back to you with everything you need to begin your sports journey at GSA."
+        imageSrc="/admissions.png"
+      />
 
       {/* Admission Process - modern cards */}
       <section className="py-20 bg-gray-50">

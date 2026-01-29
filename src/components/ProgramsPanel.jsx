@@ -14,7 +14,7 @@ const ProgramsPanel = ({ showViewAll = true }) => {
       <div className="max-w-[1335px] mx-auto w-full px-4">
         {showViewAll && (
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-charcoal-900 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-400 tracking-tight">
               Our Sports Programs
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -29,10 +29,10 @@ const ProgramsPanel = ({ showViewAll = true }) => {
               <Link
                 key={`${sport.name}-${index}`}
                 to="/programs"
-                className="group relative flex-1 min-w-[160px] md:min-w-0 shrink-0 md:shrink block overflow-hidden transition-all duration-300 ease-out md:hover:flex-[2]"
+                className="group relative flex-1 min-w-[200px] md:min-w-0 shrink-0 md:shrink flex overflow-hidden transition-all duration-300 ease-out md:hover:flex-[2]"
               >
                 {/* Fixed height so hover grows width only (not height) */}
-                <div className="h-[260px] md:h-[380px] w-full relative">
+                <div className="h-[320px] md:h-[460px] lg:h-[520px] w-full relative">
                   <img
                     src={sport.image}
                     alt={sport.name}

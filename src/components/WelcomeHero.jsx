@@ -1,9 +1,13 @@
 const WelcomeHero = () => {
   return (
     <section
-      className="relative bg-gray-100 overflow-hidden"
+      className="relative overflow-hidden bg-center bg-cover"
+      style={{ backgroundImage: "url(/image.png)" }}
       aria-label="Welcome"
     >
+      {/* Light overlay to keep dark text readable over photo */}
+      <div className="absolute inset-0 bg-white/80" aria-hidden />
+
       {/* Subtle grid background like reference */}
       <div
         className="absolute inset-0 opacity-60"

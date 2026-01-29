@@ -1,3 +1,5 @@
+import PageHero from '../components/PageHero';
+
 const About = () => {
   const mentors = [
     {
@@ -70,29 +72,12 @@ const About = () => {
 
   return (
     <>
-      {/* Join Our Academy - Hero (image 1 style) */}
-      <section className="relative py-24 md:py-32 bg-gray-50 overflow-hidden">
-        {/* Subtle monochromatic background image */}
-        <div
-          className="absolute inset-0 opacity-[0.08] grayscale bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(/slide-1.webp)` }}
-          aria-hidden
-        />
-        <div className="relative z-10 max-w-[1335px] mx-auto w-full px-4">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-            <span className="block">Join Our</span>
-            <span className="block">Academy</span>
-          </h1>
-          <p className="text-gray-900 text-lg md:text-xl max-w-3xl leading-relaxed">
-            Why choose Gandhinagar Sports Academy? Because here, dreams take shape without compromise.
-            At GSA, we believe every athlete deserves a platform to excel in sports while achieving
-            academic success. Our flexible academic framework is tailored to meet the needs of young
-            athletes, ensuring they thrive both on the field and in the classroom. With world-class
-            facilities, expert coaches, and a nurturing environment, we stand as the best sports
-            academy in Gujarat. Come, join us, and set your journey toward excellence in motion.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="About Academy"
+        title="Gandhinagar Sports Academy"
+        subtitle="Why choose Gandhinagar Sports Academy? Because here, dreams take shape without compromise. We help athletes excel in sports while achieving academic success with world-class facilities and expert coaching."
+        imageSrc="/about.png"
+      />
 
       {/* Mission & Vision */}
       <section className="py-20">

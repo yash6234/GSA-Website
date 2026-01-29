@@ -1,7 +1,35 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const SLIDE_IMAGES = ['/slide_4.webp', '/slide-5.webp', '/slide-6.webp'];
+const SLIDES = [
+  {
+    image: '/slide_4.webp',
+    title: 'Excellence in Sports,',
+    highlight: 'Excellence in Life',
+    subtitle:
+      'Join Gandhinagar Sports Academy. World-class facilities, expert coaches, and a legacy of champions.',
+    primaryCta: { label: 'Join Now', to: '/admissions' },
+    secondaryCta: { label: 'Explore Programs', to: '/programs' },
+  },
+  {
+    image: '/slide-5.webp',
+    title: 'Train Smarter.',
+    highlight: 'Play Stronger.',
+    subtitle:
+      'Structured coaching across multiple sports, focused on skill, discipline, and long-term development.',
+    primaryCta: { label: 'View Programs', to: '/programs' },
+    secondaryCta: { label: 'Contact Us', to: '/contact' },
+  },
+  {
+    image: '/slide-6.webp',
+    title: 'Build Champions',
+    highlight: 'From Day One',
+    subtitle:
+      'From beginners to competitive athletes—our mentors guide every step with modern training and support.',
+    primaryCta: { label: 'Admissions', to: '/admissions' },
+    secondaryCta: { label: 'About Academy', to: '/about' },
+  },
+];
 const ROTATE_INTERVAL_MS = 5000;
 
 const FLOATING_STATS = [
@@ -15,27 +43,30 @@ const HeroSection = () => {
 
   useEffect(() => {
     const id = setInterval(() => {
-      setCurrentIndex((i) => (i + 1) % SLIDE_IMAGES.length);
+      setCurrentIndex((i) => (i + 1) % SLIDES.length);
     }, ROTATE_INTERVAL_MS);
     return () => clearInterval(id);
   }, []);
 
+  const slide = SLIDES[currentIndex];
+
   return (
     <section
-      className="relative -mt-20 min-h-[calc(520px+5rem)] md:min-h-[calc(620px+5rem)] flex items-center overflow-hidden pt-20"
+      className="relative -mt-20 min-h-screen flex items-center overflow-hidden pt-20"
       aria-label="Hero"
     >
       {/* Background slides - extend behind navbar */}
       <div className="absolute inset-0">
-        {SLIDE_IMAGES.map((src, index) => (
+        {SLIDES.map((s, index) => (
+
           <div
-            key={src}
+            key={s.image}
             className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
               index === currentIndex ? 'opacity-100 z-0' : 'opacity-0 z-0'
             }`}
             aria-hidden={index !== currentIndex}
           >
-            <img src={src} alt="" className="w-full h-full object-cover" />
+            <img src={s.image} alt="" className="w-full h-full object-cover" />
           </div>
         ))}
         <div
@@ -45,33 +76,33 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-[2] w-full max-w-[1335px] mx-auto px-4 py-12">
+      <div className="relative z-[2] w-full max-w-[1335px] mx-auto px-4 pt-12 pb-28">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight text-white drop-shadow-lg tracking-tight">
-            Excellence in Sports,{' '}
-            <span className="text-lime-400">Excellence in Life</span>
+            {slide.title}{' '}
+            <span className="text-lime-400">{slide.highlight}</span>
           </h1>
           <p className="text-lg md:text-xl mb-8 text-gray-200 leading-relaxed max-w-xl">
-            Join Gandhinagar Sports Academy. World-class facilities, expert coaches, and a legacy of champions.
+            {slide.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to="/admissions"
+              to={slide.primaryCta.to}
               className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-lime-500 text-charcoal-900 font-semibold text-lg shadow-lg shadow-lime-500/30 hover:bg-lime-400 hover:shadow-lime-500/40 transition-all duration-300 text-center"
             >
-              Join Now
+              {slide.primaryCta.label}
             </Link>
             <Link
-              to="/programs"
+              to={slide.secondaryCta.to}
               className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-white/10 border-2 border-white/80 text-white font-semibold text-lg backdrop-blur-sm hover:bg-white/20 hover:border-white transition-all duration-300 text-center"
             >
-              Explore Programs
+              {slide.secondaryCta.label}
             </Link>
           </div>
         </div>
 
         {/* Floating stat cards - overlapping bottom */}
-        <div className="absolute right-4 bottom-0 translate-y-1/2 hidden lg:flex gap-4 z-[3]">
+        {/* <div className="absolute right-4 bottom-8 hidden lg:flex gap-4 z-[3]">
           {FLOATING_STATS.map((stat, i) => (
             <div
               key={stat.label}
@@ -81,11 +112,11 @@ const HeroSection = () => {
               <p className="text-sm font-medium text-gray-600">{stat.label}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Mobile floating stats - below hero content */}
-      <div className="relative z-[2] lg:hidden flex justify-center gap-4 -mt-6 px-4 pb-4">
+      {/* <div className="absolute left-0 right-0 bottom-0 z-[2] lg:hidden flex justify-center gap-4 px-4 pb-6">
         {FLOATING_STATS.map((stat) => (
           <div
             key={stat.label}
@@ -95,7 +126,7 @@ const HeroSection = () => {
             <p className="text-xs font-medium text-gray-600">{stat.label}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };

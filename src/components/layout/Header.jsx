@@ -16,7 +16,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-transparent ">
+    <header className="sticky top-0 z-50 bg-transparent">
       <div className="max-w-[1335px] mx-auto w-full px-4">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -24,7 +24,7 @@ const Header = () => {
             to="/"
             className="flex items-center gap-3 group"
           >
-            <div className="relative flex items-center justify-center w-12 h-12 rounded-xl bg-lime-500 shadow-lg shadow-lime-500/25 ring-2 ring-gray-200 transition-all duration-300 group-hover:shadow-lime-500/40 group-hover:ring-lime-400/50">
+            <div className="relative flex items-center justify-center w-12 h-12 rounded-xl">
               <img
                 src="/gsa_logo.jpg"
                 alt="GSA Logo"
@@ -32,10 +32,10 @@ const Header = () => {
               />
             </div>
             <div>
-              <span className="block text-xl font-bold tracking-tight text-black">
+              <span className="flex text-xl font-bold tracking-tight text-white">
                 Gandhinagar
               </span>
-              <span className="block text-sm font-semibold tracking-widest text-black uppercase">
+              <span className="flex text-sm font-semibold tracking-widest text-white uppercase">
                 Sports Academy
               </span>
             </div>
@@ -49,8 +49,8 @@ const Header = () => {
                 to={link.path}
                 className={`relative px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-lg ${
                   isActive(link.path)
-                    ? 'text-black'
-                    : 'text-black/80 hover:text-black'
+                    ? 'text-white'
+                    : 'text-white hover:text-white'
                 }`}
               >
                 {isActive(link.path) && (
