@@ -1,36 +1,7 @@
 import PageHero from '../components/PageHero';
 
 const About = () => {
-  const mentors = [
-    {
-      name: 'Rajesh Kumar',
-      role: 'Head Coach - Cricket',
-      experience: '15+ years',
-      statement: 'At GSA, we don\'t just train athletes; we build character. Every session is designed to push boundaries while instilling discipline, teamwork, and sportsmanship. Our goal is to create not just better players, but better individuals.',
-      achievements: 'Former Ranji Trophy Player, Level 3 Certified Coach'
-    },
-    {
-      name: 'Priya Sharma',
-      role: 'Head Coach - Athletics',
-      experience: '12+ years',
-      statement: 'Excellence is not a destination, it\'s a journey. I believe in nurturing each athlete\'s unique potential through personalized training programs. At GSA, we celebrate every milestone, big or small.',
-      achievements: 'National Level Athlete, Sports Science Specialist'
-    },
-    {
-      name: 'Amit Patel',
-      role: 'Head Coach - Football',
-      experience: '18+ years',
-      statement: 'Football is more than a game; it\'s a way of life. Our training methodology combines technical skills with tactical awareness and physical conditioning. We prepare our players for the highest levels of competition.',
-      achievements: 'AFC Licensed Coach, Former State Team Captain'
-    },
-    {
-      name: 'Sneha Desai',
-      role: 'Head Coach - Swimming',
-      experience: '10+ years',
-      statement: 'Water is where champions are made. Our swimming program focuses on technique, endurance, and mental strength. We provide a safe and encouraging environment where swimmers can reach their full potential.',
-      achievements: 'National Swimming Champion, Certified Lifeguard Instructor'
-    }
-  ];
+
 
   const timeline = [
     {
@@ -110,37 +81,7 @@ const About = () => {
       </section>
 
       {/* Mentors Statements */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-[1335px] mx-auto w-full px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
-            Words from Our Mentors
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {mentors.map((mentor, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="flex items-start mb-6">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
-                    <span className="text-2xl font-bold text-blue-600">
-                      {mentor.name.charAt(0)}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">{mentor.name}</h3>
-                    <p className="text-blue-600 font-semibold">{mentor.role}</p>
-                    <p className="text-sm text-gray-500">{mentor.experience} of Experience</p>
-                  </div>
-                </div>
-                <p className="text-gray-700 leading-relaxed mb-4 italic">
-                  "{mentor.statement}"
-                </p>
-                <p className="text-sm text-gray-600 border-t pt-4">
-                  <span className="font-semibold">Credentials:</span> {mentor.achievements}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Timeline */}
       <section className="py-20">

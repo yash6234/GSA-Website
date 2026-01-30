@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 
 const PROGRAM_CARDS = [
-  { label: 'CRICKET', title: 'Cricket', image: '/image%20for%20welcome_files/cricket.jpg' },
-  { label: 'TENNIS', title: 'Tennis', image: '/image%20for%20welcome_files/tennis.jpg' },
-  { label: 'FOOTBALL', title: 'Football', image: '/football.webp' },
-  { label: 'BADMINTON', title: 'Badminton', image: '/image%20for%20welcome_files/badminton.jpg' },
-  { label: 'BASKETBALL', title: 'Basketball', image: '/image%20for%20welcome_files/basketball.jpg' },
-  { label: 'VOLLEYBALL', title: 'Volleyball', image: '/image%20for%20welcome_files/vallyball-img.jpg' },
-  { label: 'SWIMMING', title: 'Swimming', image: '/image%20for%20welcome_files/swimming.jpg' },
-  { label: 'PICKLEBALL', title: 'Pickleball', image: '/pickleball.webp' },
+  { label: 'CRICKET', title: 'Cricket', image: 'public/Programs/cricpro.png' },
+  { label: 'TENNIS', title: 'Tennis', image: 'public/Programs/tennispro.png' },
+  { label: 'FOOTBALL', title: 'Football', image: 'public/Programs/footballpro.png' },
+  { label: 'BADMINTON', title: 'Badminton', image: 'public/Programs/badpro.png' },
+  { label: 'BASKETBALL', title: 'Basketball', image: 'public/Programs/baspro.png' },
+  { label: 'VOLLEYBALL', title: 'Volleyball', image: 'public/Programs/basketpro.png' },
+  { label: 'SWIMMING', title: 'Swimming', image: 'public/Programs/swimmingpro.png' },
+  { label: 'PICKLEBALL', title: 'Pickleball', image: 'public/Programs/pickleballpro.png' },
 ];
 
 const ProgramsImageCards = () => {

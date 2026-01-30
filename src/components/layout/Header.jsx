@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
@@ -6,6 +6,21 @@ const Header = () => {
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
+
+  useEffect(() => {
+    const setScrolled = () => {
+      // Use a small threshold so it flips right after leaving the top.
+      const scrolled = (window.scrollY || 0) > 10;
+      document.documentElement.classList.toggle('nav-scrolled', scrolled);
+    };
+
+    setScrolled();
+    window.addEventListener('scroll', setScrolled, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', setScrolled);
+      document.documentElement.classList.remove('nav-scrolled');
+    };
+  }, []);
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -16,7 +31,9 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-transparent">
+    <header
+      className="sticky top-0 z-50 transition-colors duration-300 bg-transparent [.nav-scrolled_&]:bg-white/95 [.nav-scrolled_&]:backdrop-blur [.nav-scrolled_&]:shadow-md [.nav-scrolled_&]:shadow-black/5"
+    >
       <div className="max-w-[1335px] mx-auto w-full px-4">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -32,10 +49,10 @@ const Header = () => {
               />
             </div>
             <div>
-              <span className="flex text-xl font-bold tracking-tight text-white">
+              <span className="flex text-xl font-bold tracking-tight text-white [.nav-scrolled_&]:text-charcoal-900">
                 Gandhinagar
               </span>
-              <span className="flex text-sm font-semibold tracking-widest text-white uppercase">
+              <span className="flex text-sm font-semibold tracking-widest text-white uppercase [.nav-scrolled_&]:text-charcoal-900">
                 Sports Academy
               </span>
             </div>
@@ -47,10 +64,10 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-lg ${
+                className={`relative px-4 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-lg text-white [.nav-scrolled_&]:text-charcoal-900 ${
                   isActive(link.path)
-                    ? 'text-white'
-                    : 'text-white hover:text-white'
+                    ? ''
+                    : 'hover:text-white [.nav-scrolled_&]:hover:text-charcoal-900'
                 }`}
               >
                 {isActive(link.path) && (
@@ -73,7 +90,7 @@ const Header = () => {
               Enroll Now
             </Link> */}
             <button
-              className="md:hidden p-2.5 rounded-xl text-black hover:bg-gray-100 transition-colors"
+              className="md:hidden p-2.5 rounded-xl text-white hover:bg-white/10 transition-colors [.nav-scrolled_&]:text-charcoal-900 [.nav-scrolled_&]:hover:bg-gray-100"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -88,8 +105,8 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Mobile Navigation - full overlay style */}
-        {/* <div
+        {/* Mobile Navigation */}
+        <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
             isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
@@ -102,22 +119,15 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl text-base font-semibold uppercase tracking-wide transition-all duration-200 ${
                   isActive(link.path)
-                      ? 'bg-lime-500/20 text-black border border-lime-500/30'
-                    : 'text-black hover:bg-gray-100'
+                    ? 'bg-lime-500/20 text-charcoal-900 border border-lime-500/30'
+                    : 'text-charcoal-900 hover:bg-gray-100'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/admissions"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-center mt-4 mx-4 py-3.5 rounded-xl bg-lime-500 text-charcoal-900 font-semibold tracking-wide shadow-lg shadow-lime-500/25"
-            >
-              Enroll Now
-            </Link>
           </div>
-        </div> */}
+        </div>
       </div>
     </header>
   );

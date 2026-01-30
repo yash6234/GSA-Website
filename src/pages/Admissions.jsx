@@ -14,7 +14,10 @@ const Admissions = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const[error, setError] = useState(null);
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -24,7 +27,11 @@ const Admissions = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic (no backend, just show success message)
+    if (!emailRegex.test(formData.email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    setError(null);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
@@ -155,9 +162,14 @@ const Admissions = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className={inputClass}
+                        className={`${inputClass} ${error ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : ''}`}
                         placeholder="your.email@example.com"
                       />
+                      {error && (
+                        <p className="text-red-500 text-sm mt-1" id="email-error">
+                          {error}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -170,7 +182,10 @@ const Admissions = () => {
                         onChange={handleChange}
                         required
                         className={inputClass}
-                        placeholder="+91 XXXXX XXXXX"
+                        placeholder="Enter your phone number"
+                      maxlength="10"
+                      inputMode="numeric"
+                  
                       />
                     </div>
                   </div>
