@@ -35,7 +35,7 @@ const Contact = () => {
   };
 
   const inputClass = 'w-full px-4 py-3.5 bg-gray-50/80 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 focus:bg-white transition-all duration-200';
-  const labelClass = 'block text-sm font-semibold text-gray-800 mb-2';
+  const labelClass = 'flex text-sm font-semibold text-gray-800 mb-2';
 
   return (
     <>

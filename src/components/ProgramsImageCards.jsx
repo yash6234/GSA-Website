@@ -1,15 +1,7 @@
 import { Link } from 'react-router-dom';
+import { CONTENT } from './content/String';
 
-const PROGRAM_CARDS = [
-  { label: 'CRICKET', title: 'Cricket', image: '/image%20for%20welcome_files/cricket.jpg' },
-  { label: 'TENNIS', title: 'Tennis', image: '/image%20for%20welcome_files/tennis.jpg' },
-  { label: 'FOOTBALL', title: 'Football', image: '/football.webp' },
-  { label: 'BADMINTON', title: 'Badminton', image: '/image%20for%20welcome_files/badminton.jpg' },
-  { label: 'BASKETBALL', title: 'Basketball', image: '/image%20for%20welcome_files/basketball.jpg' },
-  { label: 'VOLLEYBALL', title: 'Volleyball', image: '/image%20for%20welcome_files/vallyball-img.jpg' },
-  { label: 'SWIMMING', title: 'Swimming', image: '/image%20for%20welcome_files/swimming.jpg' },
-  { label: 'PICKLEBALL', title: 'Pickleball', image: '/pickleball.webp' },
-];
+const PROGRAM_CARDS = CONTENT.programs.imageCards;
 
 const ProgramsImageCards = () => {
   return (
@@ -39,13 +31,6 @@ const ProgramsImageCards = () => {
                   {card.label}
                 </span>
               </div>
-
-              {/* Read more button (lime, matches current design) */}
-              {/* <div className="absolute bottom-3 left-3">
-                <span className="inline-flex items-center px-4 py-2 bg-lime-500 text-black text-sm font-semibold shadow-sm group-hover:bg-lime-400 transition-colors">
-                  Read more
-                </span>
-              </div> */}
             </Link>
           ))}
         </div>
