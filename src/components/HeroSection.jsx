@@ -1,42 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { CONTENT } from './content/String';
 
-const SLIDES = [
-  {
-    image: '/slide_4.webp',
-    title: 'Excellence in Sports,',
-    highlight: 'Excellence in Life',
-    subtitle:
-      'Join Gandhinagar Sports Academy. World-class facilities, expert coaches, and a legacy of champions.',
-    primaryCta: { label: 'Join Now', to: '/admissions' },
-    secondaryCta: { label: 'Explore Programs', to: '/programs' },
-  },
-  {
-    image: '/slide-5.webp',
-    title: 'Train Smarter.',
-    highlight: 'Play Stronger.',
-    subtitle:
-      'Structured coaching across multiple sports, focused on skill, discipline, and long-term development.',
-    primaryCta: { label: 'View Programs', to: '/programs' },
-    secondaryCta: { label: 'Contact Us', to: '/contact' },
-  },
-  {
-    image: '/slide-6.webp',
-    title: 'Build Champions',
-    highlight: 'From Day One',
-    subtitle:
-      'From beginners to competitive athletes—our mentors guide every step with modern training and support.',
-    primaryCta: { label: 'Admissions', to: '/admissions' },
-    secondaryCta: { label: 'About Academy', to: '/about' },
-  },
-];
+const SLIDES = CONTENT.hero.slides;
 const ROTATE_INTERVAL_MS = 5000;
-
-const FLOATING_STATS = [
-  { value: '500+', label: 'Athletes' },
-  { value: '8', label: 'Sports' },
-  { value: '15+', label: 'Years' },
-];
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

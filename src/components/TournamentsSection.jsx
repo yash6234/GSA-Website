@@ -1,29 +1,8 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CONTENT } from './content/String';
 
-const SOCIAL_POSTS = [
-  {
-    id: 'p1',
-    platform: 'Instagram',
-    account: '@gsasportsacademy',
-    text: 'Cricket players are made at GSA Sports Academy! Strong fundamentals + smart coaching.',
-    image: '/slide-6.webp',
-  },
-  {
-    id: 'p2',
-    platform: 'Instagram',
-    account: '@gsasportsacademy',
-    text: 'Learn from our coach — match preparation, mindset, and discipline.',
-    image: '/slide-5.webp',
-  },
-  {
-    id: 'p3',
-    platform: 'Facebook',
-    account: 'GSA Sports Academy',
-    text: 'Our football team training continues. Join the next camp and level up your game.',
-    image: '/slide_4.webp',
-  },
-];
+const SOCIAL_POSTS = CONTENT.tournaments.socialPosts;
 
 const FilterButton = ({ active, children, onClick }) => (
   <button

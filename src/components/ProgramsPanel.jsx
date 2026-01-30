@@ -1,12 +1,7 @@
 import { Link } from 'react-router-dom';
+import { CONTENT } from './content/String';
 
-const SPORTS = [
-  { name: 'Tennis', image: '/tennis.jpg' },
-  { name: 'Cricket', image: '/cricke.jpg' },
-  { name: 'Pickleball', image: '/pickleball.webp' },
-  { name: 'Football', image: '/football.webp' },
-  { name: 'Swimming', image: '/swim.jpg' },
-];
+const SPORTS = CONTENT.programs.panelSports;
 
 const ProgramsPanel = ({ showViewAll = true, variant = 'default' }) => {
   const isDark = variant === 'dark';

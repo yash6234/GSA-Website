@@ -1,3 +1,5 @@
+import { CONTENT } from './content/String';
+
 const HomeWelcomeSection = () => {
   return (
     <section className="relative bg-gray-100 overflow-hidden" aria-label="Welcome">
@@ -17,29 +19,16 @@ const HomeWelcomeSection = () => {
           {/* Left: Title + copy */}
           <div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Welcome to Gandhinagar Sports Academy
+              {CONTENT.homeWelcome.title}
             </h2>
             <p className="mt-2 font-serif text-base sm:text-lg font-semibold text-gray-900">
-              The Best Sports Academy in Gandhinagar and Gujarat
+              {CONTENT.homeWelcome.subtitle}
             </p>
 
             <div className="mt-6 space-y-4 text-[13px] sm:text-sm text-gray-700 leading-relaxed max-w-xl">
-              <p>
-                Are you ready to pursue your passion for sports without compromising on
-                academics? We’re proud to offer structured training for young athletes with
-                flexible routines that support both learning and performance.
-              </p>
-              <p>
-                At Gandhinagar Sports Academy, our coaching programs—residential and
-                non-residential—go beyond physical training. We focus on building a winning
-                mindset, discipline, teamwork, and long-term athletic development with
-                guidance from experienced coaches.
-              </p>
-              <p>
-                Our mission is simple: to empower every athlete to excel in their game and
-                build confidence for life. The journey starts here—train smart, stay consistent,
-                and grow into your best self.
-              </p>
+              {CONTENT.homeWelcome.paragraphs.map((text) => (
+                <p key={text}>{text}</p>
+              ))}
             </div>
           </div>
 
