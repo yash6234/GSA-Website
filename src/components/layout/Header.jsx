@@ -83,12 +83,6 @@ const Header = () => {
 
           {/* CTA + Mobile Menu Button */}
           <div className="flex items-center gap-3">
-            {/* <Link
-              to="/admissions"
-              className="hidden sm:inline-flex items-center px-5 py-2.5 rounded-xl bg-lime-500 text-black text-sm font-semibold tracking-wide shadow-lg shadow-lime-500/25 hover:bg-lime-400 transition-all duration-300"
-            >
-              Enroll Now
-            </Link> */}
             <button
               className="md:hidden p-2.5 rounded-xl text-white hover:bg-white/10 transition-colors [.nav-scrolled_&]:text-charcoal-900 [.nav-scrolled_&]:hover:bg-gray-100"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -117,7 +111,7 @@ const Header = () => {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-xl text-base font-semibold uppercase tracking-wide transition-all duration-200 ${
+                className={`flex px-4 py-3 rounded-xl text-base font-semibold uppercase tracking-wide transition-all duration-200 ${
                   isActive(link.path)
                     ? 'bg-lime-500/20 text-charcoal-900 border border-lime-500/30'
                     : 'text-charcoal-900 hover:bg-gray-100'

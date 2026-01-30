@@ -31,13 +31,6 @@ const ProgramsImageCards = () => {
                   {card.label}
                 </span>
               </div>
-
-              {/* Read more button (lime, matches current design) */}
-              {/* <div className="absolute bottom-3 left-3">
-                <span className="inline-flex items-center px-4 py-2 bg-lime-500 text-black text-sm font-semibold shadow-sm group-hover:bg-lime-400 transition-colors">
-                  Read more
-                </span>
-              </div> */}
             </Link>
           ))}
         </div>

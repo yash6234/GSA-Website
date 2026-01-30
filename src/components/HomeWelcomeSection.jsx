@@ -49,12 +49,6 @@ const HomeWelcomeSection = () => {
           </div>
         </div>
 
-        {/* Small center dot at bottom like reference */}
-        {/* <div className="absolute left-1/2 -translate-x-1/2 bottom-6">
-          <div className="w-8 h-8 rounded-full border border-gray-400/60 flex items-center justify-center bg-white/30">
-            <div className="w-2 h-2 rounded-full bg-gray-700/70" />
-          </div>
-        </div> */}
       </div>
     </section>
   );

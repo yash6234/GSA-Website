@@ -111,12 +111,6 @@ const TournamentsSection = ({ compact = false }) => {
               </div>
 
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                {/* <Link
-                  to="/tournaments"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-lime-500 text-charcoal-900 font-semibold hover:bg-lime-400 transition-colors"
-                >
-                  View Tournaments
-                </Link> */}
                 <Link
                   to="/admissions"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gray-900 text-white font-semibold hover:bg-charcoal-800 transition-colors"

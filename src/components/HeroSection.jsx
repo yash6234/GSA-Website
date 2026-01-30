@@ -67,33 +67,7 @@ const HeroSection = () => {
             </Link>
           </div>
         </div>
-
-        {/* Floating stat cards - overlapping bottom */}
-        {/* <div className="absolute right-4 bottom-8 hidden lg:flex gap-4 z-[3]">
-          {FLOATING_STATS.map((stat, i) => (
-            <div
-              key={stat.label}
-              className="bg-white rounded-2xl shadow-xl shadow-black/20 px-6 py-4 min-w-[100px] text-center border border-gray-100"
-            >
-              <p className="text-2xl font-bold text-charcoal-900">{stat.value}</p>
-              <p className="text-sm font-medium text-gray-600">{stat.label}</p>
-            </div>
-          ))}
-        </div> */}
       </div>
-
-      {/* Mobile floating stats - below hero content */}
-      {/* <div className="absolute left-0 right-0 bottom-0 z-[2] lg:hidden flex justify-center gap-4 px-4 pb-6">
-        {FLOATING_STATS.map((stat) => (
-          <div
-            key={stat.label}
-            className="bg-white rounded-2xl shadow-xl shadow-black/15 px-5 py-3 flex-1 max-w-[120px] text-center border border-gray-100"
-          >
-            <p className="text-xl font-bold text-charcoal-900">{stat.value}</p>
-            <p className="text-xs font-medium text-gray-600">{stat.label}</p>
-          </div>
-        ))}
-      </div> */}
     </section>
   );
 };
