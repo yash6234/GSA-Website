@@ -52,13 +52,13 @@ export const CONTENT = {
   admissions: {
     sportsList: [
       'Cricket',
-      'Football',
-      'Basketball',
-      'Tennis',
-      'Badminton',
-      'Athletics',
-      'Swimming',
-      'Volleyball',
+      // 'Football',
+      // 'Basketball',
+      // 'Tennis',
+      // 'Badminton',
+      // 'Athletics',
+      // 'Swimming',
+      // 'Volleyball',
     ],
   },
 
@@ -75,12 +75,12 @@ export const CONTENT = {
     ],
 
     panelSports: [
-      { name: 'Tennis', image: '/tennis.jpg' },
+      // { name: 'Tennis', image: '/tennis.jpg' },
       { name: 'Cricket', image: '/cricke.jpg' },
-      { name: 'Pickleball', image: '/pickleball.webp' },
-      { name: 'Football', image: '/football.webp' },
-      { name: 'Swimming', image: '/swim.jpg' },
-    ],
+      // { name: 'Pickleball', image: '/pickleball.webp' },
+    //   { name: 'Football', image: '/football.webp' },
+    //   { name: 'Swimming', image: '/swim.jpg' },
+     ],
   },
 
   tournaments: {
@@ -91,6 +91,7 @@ export const CONTENT = {
         account: '@gsasportsacademy',
         text: 'Cricket players are made at GSA Sports Academy! Strong fundamentals + smart coaching.',
         image: '/slide-6.webp',
+        permalink: 'https://www.instagram.com/p/DT9hCwuimTN/?utm_source=ig_embed&utm_campaign=loading',
       },
       {
         id: 'p2',

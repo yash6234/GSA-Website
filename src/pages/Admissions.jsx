@@ -17,7 +17,10 @@ const Admissions = () => {
   const [submitted, setSubmitted] = useState(false);
   const[error, setError] = useState(null);
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+  
+
   
   const handleChange = (e) => {
     setFormData({
@@ -64,7 +67,7 @@ const Admissions = () => {
       />
 
       {/* Admission Process - modern cards */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-[1335px] mx-auto w-full px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
             How It Works
@@ -92,16 +95,24 @@ const Admissions = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Enquiry Form - modern card */}
       <section className="py-20">
         <div className="max-w-[1335px] mx-auto w-full px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-xl shadow-gray-200/50">
-              <h2 className="text-3xl font-bold mb-2 text-gray-900">Enquiry Form</h2>
-              <p className="text-gray-600 mb-8">Tell us about the athlete and the sport they want to learn.</p>
+            {/* Intro (outside the form card) */}
+            <div className="mb-6 text-center">
+              <h2 className="text-3xl font-bold text-gray-900">Admissions & Enquiry</h2>
+              <p className="mt-2 text-gray-600">
+                Tell us about the athlete and the sport they want to learn—our team will guide you with the next steps.
+              </p>
+              <blockquote className="mt-4 inline-flex rounded-xl border border-cyan-200/70 bg-cyan-50 px-4 py-3 text-cyan-900">
+                <p className="text-sm font-semibold">“Excellence in Sports, Excellence in Life.”</p>
+              </blockquote>
+            </div>
 
+            <div className="bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-xl shadow-gray-200/50">
               {submitted ? (
                 <div className="rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/80 p-8 text-center shadow-inner">
                   <svg className="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
