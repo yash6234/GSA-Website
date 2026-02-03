@@ -19,7 +19,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative -mt-20 min-h-screen flex items-center overflow-hidden pt-20"
+      className="relative -mt-24 min-h-screen flex items-center overflow-hidden pt-24"
       aria-label="Hero"
     >
       {/* Background slides - extend behind navbar */}

@@ -6,9 +6,6 @@ export default {
     ],
     theme: {
       extend: {
-        fontFamily: {
-          serif: ['Playfair Display', 'Georgia', 'serif'],
-        },
         colors: {
           charcoal: { DEFAULT: '#1f2937', 800: '#1f2937', 900: '#111827' },
         },
@@ -16,4 +13,4 @@ export default {
       },
     },
     plugins: [],
-  }   
+  }

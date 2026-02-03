@@ -19,15 +19,13 @@ const ensureInstagramScript = () => {
 };
 
 const processInstagramEmbeds = () => {
-  // Instagram exposes: window.instgrm.Embeds.process()
   if (typeof window === 'undefined') return;
   window.instgrm?.Embeds?.process?.();
 };
 
-const InstagramEmbeded = ({ permalink, captioned = true }) => {
+const InstagramEmbeded = ({ permalink }) => {
   useEffect(() => {
     const script = ensureInstagramScript();
-    // If script already loaded, process immediately.
     processInstagramEmbeds();
 
     if (!script) return;

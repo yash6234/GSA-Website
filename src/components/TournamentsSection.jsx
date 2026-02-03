@@ -62,7 +62,7 @@ const TournamentsSection = ({ compact = false }) => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
                     {instagramPosts.map((p) => (
                       <div key={p.id} className="w-full max-w-[360px] rounded-xl border border-gray-200 bg-white">
-                        <InstagramEmbeded permalink={p.permalink} captioned />
+                        <InstagramEmbeded permalink={p.permalink} />
                       </div>
                     ))}
                   </div>

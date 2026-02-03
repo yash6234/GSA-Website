@@ -60,80 +60,172 @@ const About = () => {
         imageSrc="/about.png"
       />
 
-      {/* Mission & Vision */}
-      <section className="py-12 md:py-14">
-        <div className="max-w-[1335px] mx-auto w-full px-4">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-10">
-            <div>
-              <h2 className="text-3xl font-bold mb-4 text-gray-900">Our Mission</h2>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                To provide exceptional sports training and development opportunities that empower 
-                young athletes to achieve their full potential, both on and off the field.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                We believe in holistic development, combining physical training with mental 
-                conditioning, character building, and academic support to create well-rounded individuals.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold mb-4 text-gray-900">Our Vision</h2>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                To become the premier sports academy in India, recognized for producing 
-                world-class athletes who excel at national and international competitions.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                We envision a future where every talented athlete has access to quality training 
-                and mentorship, regardless of their background, creating a legacy of sporting excellence.
-              </p>
-            </div>
+      {/* Our Mission - left image, right text; stacked on mobile */}
+      <section className="py-16 bg-white">
+  <div className="max-w-[1335px] mx-auto px-6">
+
+    <div className="grid md:grid-cols-2 gap-10 items-center overflow-hidden rounded-2xl ">
+
+      {/* LEFT CONTENT AREA */}
+      <div>
+        {/* Title Decoration */}
+        <div className="flex items-center gap-2 mb-2">
+          <span className="h-[2px] w-10 bg-gray-300"></span>
+          <div className="flex gap-1">
+            <span className="h-2 w-2 bg-lime-500 rotate-45"></span>
+            <span className="h-2 w-2 bg-lime-500 rotate-45"></span>
+            <span className="h-2 w-2 bg-lime-500 rotate-45"></span>
+          </div>
+          <span className="h-[2px] w-10 bg-gray-300"></span>
+        </div>
+
+        <h2 className="text-4xl md:text-5xl font-bold mb-10">
+          Our Mission
+        </h2>
+
+        {/* Item 1 */}
+        <div className="flex gap-4 mb-6">
+          <div className="h-12 w-12 flex items-center justify-center border border-lime-500 rounded-xl">
+            <img src="/our_vision.png" alt="Vision" className="w-6 h-6" />
+          </div>
+          <div>
+            <h4 className="font-semibold text-lg">Vision</h4>
+            <p className="text-gray-600">
+              Define our long-term aspirations and direction for young cricketers.
+            </p>
           </div>
         </div>
-      </section>
 
-      {/* What Founders Say */}
-      <section className="py-12 md:py-14 bg-gray-50">
-        <div className="max-w-[1335px] mx-auto w-full px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-7 text-gray-900">
-            What Founders Say
+        {/* Item 2 */}
+        <div className="flex gap-4 mb-6">
+          <div className="h-12 w-12 flex items-center justify-center border border-lime-500 rounded-xl">
+            <img src="/our_mission.png" alt="Mission" className="w-6 h-6" />
+          </div>
+          <div>
+            <h4 className="font-semibold text-lg">Missions</h4>
+            <p className="text-gray-600">
+              Outline our core objectives and training strategies.
+            </p>
+          </div>
+        </div>
+
+        {/* Item 3 */}
+        <div className="flex gap-4">
+          <div className="h-12 w-12 flex items-center justify-center border border-lime-500 rounded-xl">
+          <img src="/goals.png" alt="Goals" className="w-6 h-6" />
+          </div>
+          <div>
+            <h4 className="font-semibold text-lg">Goals</h4>
+            <p className="text-gray-600">
+              Set measurable milestones for sporting success.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT IMAGE MOSAIC */}
+      <div className="relative hidden md:block">
+
+        <div className="grid grid-cols-2 gap-4 rotate-45">
+
+          <img
+            src="/cricke.jpg"
+            className="h-44 w-full object-cover rounded-2xl"
+          />
+
+          <img
+            src="/slide_4.webp"
+            className="h-44 w-full object-cover rounded-2xl"
+          />
+
+          <img
+            src="/playground.png"
+            className="h-44 w-full object-cover rounded-2xl"
+          />
+
+          <img
+            src="/programs.png"
+            className="h-44 w-full object-cover rounded-2xl"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+      {/* Founders - enhanced cards with accent, badge, and depth */}
+      <section className="py-12 md:py-14 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #000 1px, transparent 0)', backgroundSize: '24px 24px' }} aria-hidden />
+        <div className="max-w-[1335px] mx-auto w-full px-4 sm:px-5 relative">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-2 text-gray-900">
+            Our Founders
           </h2>
-          <div className="max-w-4xl mx-auto">
-            <blockquote className="relative bg-white rounded-2xl border border-gray-200 shadow-lg shadow-gray-200/50 p-6 md:p-8 overflow-hidden">
-              {/* Quote mark */}
-              <div
-                className="absolute -top-6 -right-2 text-lime-500/15"
-                aria-hidden
+          <p className="text-center text-gray-600 mb-8 md:mb-12 max-w-xl mx-auto text-sm sm:text-base px-1">
+            The people behind Gandhinagar Sports Academy
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 items-start">
+            {[
+              {
+                name: 'Narendra Modi',
+                role: 'Founder',
+                description: 'Narendra Modi is the founder of Gandhinagar Sports Academy, and his background, passion for sports, and vision for Gandhinagar Sports Academy.',
+                image: '/founder.png',
+              },
+              {
+                name: 'Amit Shah',
+                role: 'Co-Founder',
+                description: 'Amit Shah is the co-founder of Gandhinagar Sports Academy, and his background, passion for sports, and vision for Gandhinagar Sports Academy.',
+                image: '/founder.png',
+              },
+              {
+                name: 'Yogi Adityanath',
+                role: 'Director of Sports',
+                description: 'Yogi Adityanath is the director of Sports of Gandhinagar Sports Academy, and his background, passion for sports, and vision for Gandhinagar Sports Academy.',
+                image: '/founder.png',
+              },
+            ].map((founder, index) => (
+              <article
+                key={index}
+                className="relative flex flex-col items-center text-center bg-white rounded-2xl border border-gray-200/80 shadow-lg shadow-gray-200/50 overflow-hidden"
               >
-                <svg width="140" height="140" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M7.17 6A5.99 5.99 0 0 0 2 12v6h6v-6H5.5a3.5 3.5 0 0 1 3.5-3.5V6H7.17zm14 0A5.99 5.99 0 0 0 16 12v6h6v-6h-2.5A3.5 3.5 0 0 1 23 8.5V6h-1.83z" />
-                </svg>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="mt-1 w-10 h-10 rounded-xl bg-lime-500 text-charcoal-900 flex items-center justify-center flex-shrink-0 shadow-lg shadow-lime-500/20">
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                    <path d="M7.17 6A5.99 5.99 0 0 0 2 12v6h6v-6H5.5a3.5 3.5 0 0 1 3.5-3.5V6H7.17zm14 0A5.99 5.99 0 0 0 16 12v6h6v-6h-2.5A3.5 3.5 0 0 1 23 8.5V6h-1.83z" />
-                  </svg>
+                <div className="w-full h-1.5 bg-gradient-to-r from-lime-400 to-lime-500" aria-hidden />
+                <div className="p-6 md:p-8 flex flex-col items-center">
+                  <div className="relative">
+                    <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-gray-100 flex-shrink-0 ring-4 ring-lime-500/10 shadow-lg shadow-gray-300/50">
+                      <img
+                        src={founder.image}
+                        alt={founder.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-xl md:text-2xl text-gray-900 mt-5 tracking-tight">
+                    {founder.name}
+                  </h3>
+                  <span className="inline-block mt-2 rounded-full bg-lime-500/15 text-lime-700 px-4 py-1.5 text-xs font-bold uppercase tracking-wider">
+                    {founder.role}
+                  </span>
+                  <div className="overflow-hidden">
+                    <div className="w-12 h-0.5 bg-lime-300/50 rounded-full my-4 mx-auto" aria-hidden />
+                    <p className="text-gray-600 text-sm leading-relaxed max-w-sm pb-1">
+                      {founder.description}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                Gandhinagar Sports Academy positions itself as a center of excellence where young athletes
-                can develop holistically through structured sports education and training. The academy
-                emphasizes passion, performance, and comprehensive facilities to support athletic growth
-                across various sports disciplines. Its mission is to nurture talent with professional
-                coaching, create opportunities for competitive success, and build physical and mental
-                strength in athletes. By offering complete training programs and an environment that
-                fosters sporting excellence, the academy strives to help each student reach their full
-                potential and pursue success at higher levels of competition.
-              </p>
-              </div>
-            </blockquote>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Timeline */}
-      <section className="py-12 md:py-14">
-        <div className="max-w-[1335px] mx-auto w-full px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-5 md:mb-6 text-gray-900">
+      <section className="py-10 sm:py-12 md:py-14">
+        <div className="max-w-[1335px] mx-auto w-full px-4 sm:px-5">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 md:mb-6 text-gray-900">
             Our Journey
           </h2>
 
@@ -152,8 +244,15 @@ const About = () => {
             >
               {timeline.map((event, index) => {
                 const isActive = index === activeJourneyIndex;
+                const isFirst = index === 0;
+                const isLast = index === timeline.length - 1;
                 const edgeAlign =
-                  index === 0 ? 'self-start' : index === timeline.length - 1 ? 'self-end' : 'self-center';
+                  isFirst ? 'self-start' : isLast ? 'self-end' : 'self-start';
+                const detailsPosition = isFirst
+                  ? 'md:left-0 md:translate-x-0'
+                  : isLast
+                    ? 'md:right-0 md:left-auto md:translate-x-0'
+                    : 'md:left-1/2 md:-translate-x-1/2';
                 return (
                   <button
                     key={`${event.year}-${event.title}`}
@@ -186,10 +285,10 @@ const About = () => {
                     <div
                       className={[
                         'z-10 w-[240px] md:w-[260px]',
-                        // mobile: expand under the icon (tap to toggle)
                         'mt-3 md:mt-0',
                         edgeAlign,
-                        'md:absolute md:top-[68px] md:left-1/2 md:-translate-x-1/2',
+                        'md:absolute md:top-[68px]',
+                        detailsPosition,
                         'rounded-2xl border border-gray-200 bg-white shadow-lg shadow-gray-200/60',
                         'p-4 text-left transition-all duration-200 flex flex-col',
                         isActive
@@ -217,11 +316,11 @@ const About = () => {
           className="absolute inset-0 bg-gradient-to-br from-lime-50 via-white to-cyan-50 pointer-events-none"
           aria-hidden
         />
-        <div className="relative max-w-[1335px] mx-auto w-full px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-900">
+          <div className="relative max-w-[1335px] mx-auto w-full px-4 sm:px-5">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-5 md:mb-8 text-gray-900">
             Our Core Values
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
               { title: 'Passion', desc: 'We build a love for sport—energy, consistency, and confidence every day.' },
               { title: 'Performance', desc: 'Structured training and match preparation that turns effort into results.' },

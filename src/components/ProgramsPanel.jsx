@@ -1,152 +1,124 @@
-import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CONTENT } from './content/String';
 
 const SPORTS = CONTENT.programs.panelSports;
+const SPORTS2 = CONTENT.programs.panelSports2;
+const PROGRAMS = CONTENT.programs;
 
 const ProgramsPanel = ({ showViewAll = true, variant = 'default' }) => {
   const isDark = variant === 'dark';
-  const [flippedIndex, setFlippedIndex] = useState(null);
-
-  const programDetails = useMemo(
-    () => ({
-      Cricket: {
-        points: [
-          'Improve bowling strength, speed & accuracy',
-          'Batting technique, timing & shot selection',
-          'Fielding drills: catching, throwing & agility',
-          'Match practice: strategy, game awareness & mindset',
-          'Fitness: stamina, core strength & injury prevention',
-          'Mental & Discipline Training: Confidence, focus, Teamwork & leadership',
-        ],
-      },
-    }),
-    []
-  );
+  const textHeading = 'text-black-500';
+  const textBody = 'text-white';
+  const textContentBg = isDark ? 'bg-white/40 backdrop-blur-sm' : 'bg-orange-50';
 
   return (
-    <section className="py-16 md:py-20">
-      <div className="max-w-[500px] mx-auto w-full px-4">
+    <section className="py-10 md:py-12">
+      <div className="max-w-[900px] mx-auto w-full px-4 md:px-6">
         {showViewAll && (
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2
               className={`text-3xl md:text-4xl font-bold mb-4 tracking-tight ${
-                isDark ? 'text-white' : 'text-blue-400'
+                isDark ? 'text-white' : 'text-gray-900'
               }`}
             >
               Our Sports Programs
             </h2>
-            {/* <p
-              className={`text-xl max-w-2xl mx-auto ${
-                isDark ? 'text-slate-300' : 'text-gray-600'
-              }`}
-            >
-              Hover over each sport to see the program name
-            </p> */}
           </div>
         )}
-        {/* Mobile: vertical cards with gaps. Tablet/Desktop: hover strip like desktop. */}
-        <div className="md:overflow-hidden md:shadow-xl md:border md:border-gray-200">
-          <div className="flex flex-col gap-6 md:gap-0 md:flex-row md:w-full md:overflow-visible">
-            {SPORTS.map((sport, index) => (
-              <button
-                key={`${sport.name}-${index}`}
-                type="button"
-                onClick={() => setFlippedIndex(flippedIndex === index ? null : index)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setFlippedIndex(flippedIndex === index ? null : index);
-                  }
-                }}
-                className={[
-                  'group relative w-full overflow-hidden rounded-2xl md:rounded-none md:flex-1 md:min-w-0',
-                  'focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
-                  'flip-card',
-                  flippedIndex === index ? 'is-flipped' : '',
-                ].join(' ')}
-                aria-pressed={flippedIndex === index ? 'true' : 'false'}
-                aria-label={`${sport.name} program details`}
+
+        {SPORTS.map((sport, sportIndex) => (
+          <div key={`${sport.name}-${sportIndex}`} className="space-y-0">
+            {/* Block 1: Image left, Text right - side by side, equal columns */}
+            <div className="grid md:grid-cols-2 gap-0 items-stretch overflow-hidden rounded-2xl">
+              <div className="relative w-full aspect-[4/3] md:min-h-[420px] md:aspect-auto order-2 md:order-1">
+                <img
+                  src={sport.image}
+                  alt={`${sport.name} training`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div
+                className={`p-5 md:p-6 order-1 md:order-2 flex flex-col justify-center md:min-h-[420px] md:overflow-y-auto text-left ${textContentBg}`}
               >
-                {/* Mobile: taller card so back content fits; desktop: fixed height for hover strip */}
-                <div className="h-[300px] min-[480px]:h-[340px] sm:h-[360px] md:h-[460px] lg:h-[520px] w-full relative">
-                  <div className="flip-card-inner">
-                    {/* Front */}
-                    <div className="flip-card-face">
-                      <div className="w-full h-full relative">
-                        <img
-                          src={sport.image}
-                          alt={sport.name}
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
-                        <div className="absolute inset-x-0 bottom-0 px-4 py-4 sm:px-5 sm:pb-5 flex flex-col gap-2">
-                          <div className="flex items-center justify-between gap-3">
-                            <p className="text-white text-base sm:text-lg font-bold">{sport.name}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                <h3 className={`text-xl md:text-2xl font-bold ${textHeading} mb-3`}>
+                  Personalized Training for Aspiring Cricketers
+                </h3>
+                <p className={`${textBody} text-sm leading-relaxed mb-4`}>
+                  {PROGRAMS.trainingIntro}
+                </p>
+                <ul className="space-y-2 list-disc list-inside">
+                  {PROGRAMS.trainingPoints.map((item) => (
+                    <li key={item.title} className={`${textBody} text-sm leading-relaxed`}>
+                      <span className="font-semibold">{item.title}:</span> {item.desc}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
 
-                    {/* Back: flex column so on mobile the points list can scroll if needed */}
-                    <div className="flip-card-face flip-card-back">
-                      <div
-                        className={[
-                          'w-full h-full flex flex-col p-4 sm:p-5 md:p-6',
-                          isDark ? 'bg-transparent-blur text-white' : 'bg-white text-charcoal-900',
-                        ].join(' ')}
-                      >
-                        <div className="flex-shrink-0">
-                          <p className={['text-lg sm:text-xl md:text-2xl font-semibold tracking-widest uppercase text-center', isDark ? 'text-cyan-300' : 'text-cyan-600'].join(' ')}>
-                            Cricket Program
-                          </p>
-                        </div>
-
-                        <div className="flex-1 min-h-0 overflow-y-auto mt-2 sm:mt-3 -mx-1 px-1 scrollbar-hide">
-                          <div className="flex flex-col gap-2 sm:gap-2.5">
-                            {(programDetails[sport.name]?.points || []).map((point) => (
-                              <div key={point} className="flex items-start gap-2 sm:gap-2.5">
-                                <div
-                                  className={[
-                                    'mt-1 w-4 h-4 sm:w-5 sm:h-5 rounded-full border flex items-center justify-center flex-shrink-0',
-                                    isDark ? 'bg-white/10 border-orange' : 'bg-yellow-50 border-cyan-200/70',
-                                  ].join(' ')}
-                                >
-                                  <div className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-cyan-500" />
-                                </div>
-                                <p className={['text-xs sm:text-sm leading-relaxed', isDark ? 'text-orange-200' : 'text-orange'].join(' ')}>
-                                  {point}
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className={['flex items-center justify-between gap-3 pt-3 sm:pt-4 flex-shrink-0 border-t', isDark ? 'border-white/10' : 'border-gray-200'].join(' ')}>
-                          <Link
-                            to="/programs"
-                            className="inline-flex items-center justify-center h-9 sm:h-10 px-3 sm:px-4 rounded-xl bg-lime-500 text-charcoal-900 text-xs sm:text-sm font-semibold shadow-lg shadow-cyan-500/20"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            View Program
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            {/* Block 2: Text left, Image right - side by side, equal columns */}
+            <div className="grid md:grid-cols-2 gap-0 items-stretch overflow-hidden rounded-2xl">
+              <div
+                className={`p-5 md:p-6 order-1 flex flex-col justify-center md:min-h-[320px] md:overflow-y-auto text-left ${textContentBg}`}
+              >
+                <h3 className={`text-xl md:text-2xl font-bold ${textHeading} mb-3`}>
+                  World-Class Facilities to Elevate Your Game
+                </h3>
+                <p className={`${textBody} text-sm leading-relaxed mb-4`}>
+                  {PROGRAMS.facilitiesIntro}
+                </p>
+                <ul className="space-y-2 list-disc list-inside">
+                  {PROGRAMS.facilitiesList.map((item) => (
+                    <li key={item} className={`${textBody} text-sm leading-relaxed`}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6">
+                  <Link
+                    to="/admissions"
+                    className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-lime-500 text-charcoal-900 text-sm font-semibold hover:bg-lime-400 transition-colors"
+                  >
+                    Join Now
+                  </Link>
                 </div>
-              </button>
-            ))}
+              </div>
+              <div className="relative w-full aspect-[4/3] md:min-h-[420px] md:aspect-auto order-2">
+                <img
+                  src={SPORTS2[sportIndex]?.image ?? SPORTS2[0]?.image}
+                  alt={`${SPORTS2[sportIndex]?.name ?? SPORTS2[0]?.name ?? 'Sports'} facilities`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
+        ))}
+
+        {/* Testimonial */}
+        <div className="mt-12 md:mt-16 rounded-2xl overflow-hidden bg-background-blur text-white px-6 py-10 md:px-12 md:py-12 text-center">
+          <blockquote className="max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl leading-relaxed font-playwrite italic">
+              &ldquo;{PROGRAMS.testimonialQuote}&rdquo;
+            </p>
+            <footer className="mt-6">
+              <cite className="not-italic font-semibold text-lime-400">
+                {PROGRAMS.testimonialAuthor}
+              </cite>
+              <p className="text-white/80 text-sm mt-1">
+                {PROGRAMS.testimonialRole}
+              </p>
+            </footer>
+          </blockquote>
         </div>
+
         {showViewAll && (
           <div className="text-center mt-10">
-            {/* <Link
-              to="/programs"
+            <Link
+              to="/gallery"
               className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-lime-500 text-charcoal-900 font-semibold shadow-lg shadow-lime-500/25 hover:bg-lime-400 transition-all duration-300"
             >
-              View All Programs
-            </Link> */}
+              View Gallery
+            </Link>
           </div>
         )}
       </div>

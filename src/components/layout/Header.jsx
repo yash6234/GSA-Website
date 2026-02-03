@@ -9,7 +9,6 @@ const Header = () => {
 
   useEffect(() => {
     const setScrolled = () => {
-      // Use a small threshold so it flips right after leaving the top.
       const scrolled = (window.scrollY || 0) > 10;
       document.documentElement.classList.toggle('nav-scrolled', scrolled);
     };
@@ -25,7 +24,8 @@ const Header = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Academy' },
-    { path: '/programs', label: 'Programs' },
+    { path: '/gallery', label: 'Gallery' },
+    { path: '/playground', label: 'Playground' },
     { path: '/admissions', label: 'Admissions' },
     { path: '/contact', label: 'Contact' },
   ];
@@ -35,17 +35,17 @@ const Header = () => {
       className="sticky top-0 z-50 transition-colors duration-300 bg-transparent [.nav-scrolled_&]:bg-white/95 [.nav-scrolled_&]:backdrop-blur [.nav-scrolled_&]:shadow-md [.nav-scrolled_&]:shadow-black/5"
     >
       <div className="max-w-[1335px] mx-auto w-full px-4">
-        <nav className="flex items-center justify-between h-20">
+        <nav className="flex items-center justify-between h-24 py-2">
           {/* Logo */}
           <Link
             to="/"
             className="flex items-center gap-3 group"
           >
-            <div className="relative flex items-center justify-center w-15 h-15 rounded-xl">
+            <div className="relative flex items-center justify-center rounded-xl">
               <img
                 src="/gsa_logo.png"
                 alt="GSA Logo"
-                className="h-20 w-20 object-contain rounded-lg"
+                className="h-14 w-14 sm:h-14 sm:w-14 md:h-16 md:w-16 object-contain rounded-lg"
               />
             </div>
             <div>

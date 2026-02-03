@@ -2,11 +2,6 @@
 // Import this module wherever you need reusable text or lists.
 
 export const CONTENT = {
-  site: {
-    name: 'Gandhinagar Sports Academy',
-    shortName: 'GSA',
-  },
-
   hero: {
     slides: [
       {
@@ -16,7 +11,7 @@ export const CONTENT = {
         subtitle:
           'Join Gandhinagar Sports Academy. World-class facilities, expert coaches, and a legacy of champions.',
         primaryCta: { label: 'Join Now', to: '/admissions' },
-        secondaryCta: { label: 'Explore Programs', to: '/programs' },
+        secondaryCta: { label: 'Explore Gallery', to: '/gallery' },
       },
       {
         image: '/slide-5.webp',
@@ -24,7 +19,7 @@ export const CONTENT = {
         highlight: 'Play Stronger.',
         subtitle:
           'Structured coaching across multiple sports, focused on skill, discipline, and long-term development.',
-        primaryCta: { label: 'View Programs', to: '/programs' },
+        primaryCta: { label: 'View Gallery', to: '/gallery' },
         secondaryCta: { label: 'Contact Us', to: '/contact' },
       },
       {
@@ -50,16 +45,7 @@ export const CONTENT = {
   },
 
   admissions: {
-    sportsList: [
-      'Cricket',
-      // 'Football',
-      // 'Basketball',
-      // 'Tennis',
-      // 'Badminton',
-      // 'Athletics',
-      // 'Swimming',
-      // 'Volleyball',
-    ],
+    sportsList: ['Cricket'],
   },
 
   programs: {
@@ -75,8 +61,35 @@ export const CONTENT = {
     ],
 
     panelSports: [
-      { name: 'Cricket', image: '/cricke.jpg' },
+      { name: 'Cricket', image: '/batting .jpg' },
     ],
+
+    trainingIntro: 'At Gandhinagar Sports Academy, our cricket coaching is designed to meet the needs of players at different stages of their journey. Our curriculum covers all essential aspects of cricket:',
+    trainingPoints: [
+      { title: 'Batting Skills', desc: 'Master shot selection, footwork, timing, and power-hitting techniques.' },
+      { title: 'Bowling Techniques', desc: 'Develop pace, spin, accuracy, and variations to outsmart opponents.' },
+      { title: 'Fielding Drills', desc: 'Improve agility, reflexes, catching, and ground fielding with focused exercises.' },
+      { title: 'Fitness & Conditioning', desc: 'Specialized cricket fitness training to build strength, endurance, and injury resilience.' },
+      { title: 'Game Awareness', desc: 'Tactical sessions to enhance decision-making, game strategy, and situational awareness.' },
+    ],
+    panelSports2: [
+      { name: 'Bowling', image: '/Bowling.jpg' },
+    ],
+    facilitiesIntro: 'At Gandhinagar Sports Academy, we provide world-class facilities to support comprehensive cricket coaching.',
+    facilitiesList: [
+      'Professional Practice Nets',
+      'Match-Quality Pitches',
+      'Fitness and Conditioning Zone',
+      'Video Analysis Room',
+      'Indoor Training Area',
+      'Fielding Drills Space',
+      'Recovery and Physiotherapy Room',
+      'Locker Rooms and Amenities',
+      'Residential hostel, nutritious meals, and academic support',
+    ],
+    testimonialQuote: 'I have failed at times, but I never stop trying.',
+    testimonialAuthor: 'Rahul Dravid',
+    testimonialRole: 'Former captain of Indian national cricket team.',
   },
 
   tournaments: {
