@@ -75,38 +75,54 @@ export const CONTENT = {
     ],
 
     panelSports: [
-      // { name: 'Tennis', image: '/tennis.jpg' },
       { name: 'Cricket', image: '/cricke.jpg' },
-      // { name: 'Pickleball', image: '/pickleball.webp' },
-    //   { name: 'Football', image: '/football.webp' },
-    //   { name: 'Swimming', image: '/swim.jpg' },
-     ],
+    ],
   },
 
   tournaments: {
     socialPosts: [
       {
-        id: 'p1',
+        id: 'ig1',
         platform: 'Instagram',
-        account: '@gsasportsacademy',
+        account: '@gandhinagarsportsacademy',
+        text: 'Latest update from our academy.',
+        permalink: 'https://www.instagram.com/p/DKYmJRkqasG/',
+      },
+      {
+        id: 'ig2',
+        platform: 'Instagram',
+        account: '@gandhinagarsportsacademy',
+        text: 'Academy highlights.',
+        permalink: 'https://www.instagram.com/p/CdJ1Re8vlJl/',
+      },
+      {
+        id: 'ig3',
+        platform: 'Instagram',
+        account: '@gandhinagarsportsacademy',
+        text: 'Training reel.',
+        permalink: 'https://www.instagram.com/reel/CtftqHcNM7Q/',
+      },
+      {
+        id: 'ig4',
+        platform: 'Instagram',
+        account: '@gandhinagarsportsacademy',
+        text: 'Team moments.',
+        permalink: 'https://www.instagram.com/p/DCo8vyQh42G/',
+      },
+      {
+        id: 'ig5',
+        platform: 'Instagram',
+        account: '@gandhinagarsportsacademy',
         text: 'Cricket players are made at GSA Sports Academy! Strong fundamentals + smart coaching.',
-        image: '/slide-6.webp',
-        permalink: 'https://www.instagram.com/p/DT9hCwuimTN/?utm_source=ig_embed&utm_campaign=loading',
+        permalink: 'https://www.instagram.com/p/DT9hCwuimTN/',
       },
       {
-        id: 'p2',
+        id: 'ig6',
         platform: 'Instagram',
-        account: '@gsasportsacademy',
-        text: 'Learn from our coach — match preparation, mindset, and discipline.',
-        image: '/slide-5.webp',
-      },
-      {
-        id: 'p3',
-        platform: 'Facebook',
-        account: 'GSA Sports Academy',
-        text: 'Our football team training continues. Join the next camp and level up your game.',
-        image: '/slide_4.webp',
-      },
+        account: '@gandhinagarsportsacademy',
+        text: 'Training session.',
+        permalink: 'https://www.instagram.com/p/C7OuwK5R2VP',
+      }
     ],
   },
 };

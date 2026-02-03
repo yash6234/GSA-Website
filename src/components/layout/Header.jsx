@@ -41,15 +41,15 @@ const Header = () => {
             to="/"
             className="flex items-center gap-3 group"
           >
-            <div className="relative flex items-center justify-center w-12 h-12 rounded-xl">
+            <div className="relative flex items-center justify-center w-15 h-15 rounded-xl">
               <img
-                src="/gsa_logo.jpg"
+                src="/gsa_logo.png"
                 alt="GSA Logo"
-                className="h-9 w-9 object-contain rounded-lg"
+                className="h-20 w-20 object-contain rounded-lg"
               />
             </div>
             <div>
-              <span className="flex text-xl font-bold tracking-tight text-white [.nav-scrolled_&]:text-charcoal-900">
+              <span className="flex text-2xl font-bold tracking-tight text-white [.nav-scrolled_&]:text-charcoal-900">
                 Gandhinagar
               </span>
               <span className="flex text-sm font-semibold tracking-widest text-white uppercase [.nav-scrolled_&]:text-charcoal-900">

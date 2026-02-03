@@ -51,17 +51,7 @@ const InstagramEmbeded = ({ permalink, captioned = true }) => {
         maxWidth: 540,
         width: '100%',
       }}
-    >
-      {/* Fallback while Instagram script loads */}
-      {/* <a
-        href={permalink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center p-4 text-center text-sm text-gray-600"
-      >
-        View this post on Instagram
-      </a> */}
-    </blockquote>
+    />
   );
 };
 

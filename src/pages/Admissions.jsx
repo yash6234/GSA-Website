@@ -15,13 +15,9 @@ const Admissions = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const[error, setError] = useState(null);
-
+  const [error, setError] = useState(null);
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  
-  
 
-  
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -66,38 +62,7 @@ const Admissions = () => {
         imageSrc="/admissions.png"
       />
 
-      {/* Admission Process - modern cards */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="max-w-[1335px] mx-auto w-full px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
-            How It Works
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-xl mx-auto">
-            From enquiry to enrollment — a simple path to joining our academy.
-          </p>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { step: '01', title: 'Submit Enquiry', desc: 'Fill out the admission form with your details' },
-              { step: '02', title: 'Consultation', desc: 'Our team will contact you for a consultation' },
-              { step: '03', title: 'Trial Session', desc: 'Attend a trial session to experience our training' },
-              { step: '04', title: 'Enrollment', desc: 'Complete enrollment and begin your training journey' }
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="group relative p-6 rounded-2xl bg-white border border-gray-200 shadow-lg shadow-gray-200/50 hover:shadow-xl hover:shadow-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300"
-              >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white flex items-center justify-center text-lg font-bold shadow-lg shadow-cyan-500/25 mb-5 ring-2 ring-white">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-bold mb-2 text-gray-900">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Enquiry Form - modern card */}
+      {/* Enquiry Form */}
       <section className="py-20">
         <div className="max-w-[1335px] mx-auto w-full px-4">
           <div className="max-w-3xl mx-auto">
@@ -186,7 +151,7 @@ const Admissions = () => {
                         required
                         className={inputClass}
                         placeholder="Enter your phone number"
-                      maxlength="10"
+                      maxLength={10}
                       inputMode="numeric"
                   
                       />
