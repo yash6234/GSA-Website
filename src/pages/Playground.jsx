@@ -69,12 +69,15 @@ const Playground = () => {
         />
         <div className="relative max-w-[1335px] mx-auto w-full px-4">
           <div className="min-h-[280px] md:min-h-[320px] flex flex-col justify-center py-14 md:py-16">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow">
+            <p className="text-lime-300 font-semibold tracking-widest uppercase text-sm mb-3" aria-hidden>
+              Reserve Your Ground
+            </p>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow text-white">
               Playground Booking
             </h1>
             <nav aria-label="Breadcrumb" className="mt-3">
               <ol className="flex items-center gap-2 text-white/90 text-sm md:text-base">
-                <li className="text-white font-medium">Playground Booking</li>
+                <li className="text-white font-medium">Reserve our professional grounds for cricket or football at your convenience.</li>
               </ol>
             </nav>
           </div>

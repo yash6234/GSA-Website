@@ -59,7 +59,7 @@ const Gallery = () => {
         eyebrow="Moments at Gandhinagar Sports Academy"
         title="Gallery"
         subtitle="Explore our facilities, training sessions, and academy life through photos."
-        imageSrc="/about.png"
+        imageSrc="/gallery_hr.jpg"
       />
 
       {/* Filter pills + bento grid */}
@@ -145,3 +145,139 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+// import PageHero from "../components/PageHero";
+// import { useState, useEffect, useRef } from "react";
+
+// const media = [
+//   { type: 'video', src: '/reel.mp4', alt: 'Academy reel' },
+//   { type: 'image', src: '/bg_image.png', alt: 'Academy grounds' },
+//   { type: 'image', src: '/about.png', alt: 'About GSA' },
+//   { type: 'image', src: '/Programs/cricpro.png', alt: 'Cricket program' },
+//   { type: 'image', src: '/Programs/footballpro.png', alt: 'Football program' },
+//   { type: 'image', src: '/cricke.jpg', alt: 'Cricket training' },
+//   { type: 'image', src: '/football.webp', alt: 'Football' },
+//   { type: 'image', src: '/playground.png', alt: 'Playground' },
+//   { type: 'image', src: '/swim.jpg', alt: 'Swimming' },
+//   { type: 'image', src: '/tennis.jpg', alt: 'Tennis' },
+//   { type: 'image', src: '/founder.png', alt: 'Founders' },
+//   { type: 'image', src: '/Programs/tennispro.png', alt: 'Tennis program' },
+//   { type: 'image', src: '/Programs/swimmingpro.png', alt: 'Swimming program' },
+//   { type: 'image', src: '/join_img.webp', alt: 'Join GSA' },
+// ];
+
+// const AUTOPLAY_MS = 2500;
+
+// const Gallery = () => {
+//   const [current, setCurrent] = useState(0);
+//   const videoRef = useRef(null);
+
+//   const next = () => {
+//     setCurrent((prev) => (prev + 1) % media.length);
+//   };
+
+//   const prev = () => {
+//     setCurrent((prev) => (prev === 0 ? media.length - 1 : prev - 1));
+//   };
+
+//   useEffect(() => {
+//     const id = setInterval(next, AUTOPLAY_MS);
+//     return () => clearInterval(id);
+//   }, []);
+
+//   useEffect(() => {
+//     if (videoRef.current) {
+//       const isVideoCurrent = media[current]?.type === 'video';
+//       if (isVideoCurrent) videoRef.current.play().catch(() => {});
+//       else videoRef.current.pause();
+//     }
+//   }, [current]);
+
+//   return (
+//     <>
+//       <PageHero
+//         eyebrow="Moments at Gandhinagar Sports Academy"
+//         title="Gallery"
+//         subtitle="Explore our facilities, training sessions, and academy life through photos."
+//         imageSrc="/gallery_hr.jpg"
+//       />
+
+//       <section className="py-16 bg-[#d2b48c] overflow-hidden">
+//         <div className="max-w-5xl mx-auto px-6 text-center">
+//           <h2 className="text-3xl font-semibold text-white mb-10">
+//             Training Session Gallery
+//           </h2>
+
+//           <div className="relative flex items-center justify-center min-h-[420px]">
+//             {/* Left Arrow */}
+//             {/* <button
+//               type="button"
+//               onClick={prev}
+//               className="absolute left-0 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-colors"
+//               aria-label="Previous image"
+//             >
+//               ◀
+//             </button> */}
+
+//             {/* Carousel: center image + stacked on BOTH left and right */}
+//             <div className="relative w-full max-w-[700px] h-[420px] flex items-center justify-center">
+//               {media.map((item, index) => {
+//                 let offset = index - current;
+//                 if (offset > media.length / 2) offset -= media.length;
+//                 if (offset < -media.length / 2) offset += media.length;
+
+//                 const scale = 1 - Math.abs(offset) * 0.06;
+//                 const xPx = offset * 90;
+//                 const z = media.length - Math.abs(offset);
+//                 const opacity = Math.abs(offset) <= 2 ? 1 : Math.max(0.4, 1 - (Math.abs(offset) - 2) * 0.2);
+//                 const isCenter = offset === 0;
+//                 const baseStyle = {
+//                   left: '50%',
+//                   top: '50%',
+//                   transform: `translate(-50%, -50%) translateX(${xPx}px) scale(${scale})`,
+//                   zIndex: z,
+//                   opacity,
+//                 };
+//                 const baseClass = 'absolute w-[520px] h-[340px] sm:w-[600px] sm:h-[380px] object-cover rounded-lg shadow-xl transition-all duration-500 pointer-events-none';
+
+//                 return item.type === 'video' ? (
+//                   <video
+//                     key={index}
+//                     ref={item.type === 'video' ? videoRef : undefined}
+//                     src={item.src}
+//                     className={baseClass}
+//                     style={baseStyle}
+//                     muted
+//                     loop
+//                     playsInline
+//                     autoPlay={isCenter}
+//                   />
+//                 ) : (
+//                   <img
+//                     key={index}
+//                     src={item.src}
+//                     alt={item.alt}
+//                     className={baseClass}
+//                     style={baseStyle}
+//                   />
+//                 );
+//               })}
+//             </div>
+
+//             {/* Right Arrow */}
+//             {/* <button
+//               type="button"
+//               onClick={next}
+//               className="absolute right-0 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-colors"
+//               aria-label="Next image"
+//             >
+//               ▶
+//             </button> */}
+//           </div>
+//         </div>
+//       </section>
+//     </>
+//   );
+// };
+
+// export default Gallery;

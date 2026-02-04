@@ -57,7 +57,7 @@ const About = () => {
         eyebrow="About Academy"
         title="Gandhinagar Sports Academy"
         subtitle="Why choose Gandhinagar Sports Academy? Because here, dreams take shape without compromise. We help athletes excel in sports while achieving academic success with world-class facilities and expert coaching."
-        imageSrc="/about.png"
+        imageSrc="/about_up.jpg"
       />
 
       {/* Our Mission - left image, right text; stacked on mobile */}
@@ -83,44 +83,22 @@ const About = () => {
           Our Mission
         </h2>
 
-        {/* Item 1 */}
-        <div className="flex gap-4 mb-6">
-          <div className="h-12 w-12 flex items-center justify-center border border-lime-500 rounded-xl">
-            <img src="/our_vision.png" alt="Vision" className="w-6 h-6" />
+        {/* Mission items - unified icon + content layout */}
+        {[
+          { icon: '/our_vision.png', title: 'Vision', text: 'Define our long-term aspirations and direction for young cricketers.' },
+          { icon: '/our_mission.png', title: 'Mission', text: 'Outline our core objectives and training strategies.' },
+          { icon: '/goals.png', title: 'Goals', text: 'Set measurable milestones for sporting success.' },
+        ].map((item) => (
+          <div key={item.title} className="flex gap-4 items-start mb-6 last:mb-0">
+            <div className="flex-shrink-0 h-12 w-12 flex items-center justify-center border border-lime-500 rounded-xl bg-white">
+              <img src={item.icon} alt={item.title} className="w-6 h-6 object-contain" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <h4 className="font-semibold text-lg text-gray-900 mb-1">{item.title}</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">{item.text}</p>
+            </div>
           </div>
-          <div>
-            <h4 className="font-semibold text-lg">Vision</h4>
-            <p className="text-gray-600">
-              Define our long-term aspirations and direction for young cricketers.
-            </p>
-          </div>
-        </div>
-
-        {/* Item 2 */}
-        <div className="flex gap-4 mb-6">
-          <div className="h-12 w-12 flex items-center justify-center border border-lime-500 rounded-xl">
-            <img src="/our_mission.png" alt="Mission" className="w-6 h-6" />
-          </div>
-          <div>
-            <h4 className="font-semibold text-lg">Missions</h4>
-            <p className="text-gray-600">
-              Outline our core objectives and training strategies.
-            </p>
-          </div>
-        </div>
-
-        {/* Item 3 */}
-        <div className="flex gap-4">
-          <div className="h-12 w-12 flex items-center justify-center border border-lime-500 rounded-xl">
-          <img src="/goals.png" alt="Goals" className="w-6 h-6" />
-          </div>
-          <div>
-            <h4 className="font-semibold text-lg">Goals</h4>
-            <p className="text-gray-600">
-              Set measurable milestones for sporting success.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
 
       {/* RIGHT IMAGE MOSAIC */}
