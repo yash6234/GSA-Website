@@ -1,4 +1,6 @@
 /* Tailwind directives - processed by PostCSS */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN+Guides&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,5 +27,20 @@
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Our Vision: gentler diagonal clip on mobile, stronger on desktop */
+  .vision-clip {
+    clip-path: polygon(4% 0, 96% 0, 100% 100%, 0 100%);
+  }
+  @media (min-width: 640px) {
+    .vision-clip {
+      clip-path: polygon(6% 0, 94% 0, 100% 100%, 0 100%);
+    }
+  }
+  @media (min-width: 768px) {
+    .vision-clip {
+      clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    }
   }
 }

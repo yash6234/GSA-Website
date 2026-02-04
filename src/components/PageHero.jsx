@@ -1,7 +1,7 @@
 const PageHero = ({ title, subtitle, eyebrow, imageSrc }) => {
   return (
     <section
-      className="relative -mt-20 pt-20 overflow-hidden text-white"
+      className="relative -mt-24 pt-24 overflow-hidden text-white"
       aria-label={title}
     >
       {/* Background image (extends behind the navbar) */}
@@ -29,7 +29,7 @@ const PageHero = ({ title, subtitle, eyebrow, imageSrc }) => {
               {title}
             </h1>
             {subtitle ? (
-              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+              <p className="text-md font-semibold md:text-md text-white/90 leading-relaxed">
                 {subtitle}
               </p>
             ) : null}

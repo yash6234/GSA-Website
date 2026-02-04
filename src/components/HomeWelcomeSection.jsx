@@ -18,10 +18,10 @@ const HomeWelcomeSection = () => {
         <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
           {/* Left: Title + copy */}
           <div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               {CONTENT.homeWelcome.title}
             </h2>
-            <p className="mt-2 font-serif text-base sm:text-lg font-semibold text-gray-900">
+            <p className="mt-2 text-base sm:text-lg font-semibold text-gray-900">
               {CONTENT.homeWelcome.subtitle}
             </p>
 

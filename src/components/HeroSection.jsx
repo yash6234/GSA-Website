@@ -19,7 +19,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative -mt-20 min-h-screen flex items-center overflow-hidden pt-20"
+      className="relative -mt-24 min-h-screen flex items-center overflow-hidden pt-24"
       aria-label="Hero"
     >
       {/* Background slides - extend behind navbar */}
@@ -28,8 +28,8 @@ const HeroSection = () => {
 
           <div
             key={s.image}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              index === currentIndex ? 'opacity-100 z-0' : 'opacity-0 z-0'
+            className={`absolute inset-0 z-0 transition-opacity duration-700 ease-in-out ${
+              index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
             aria-hidden={index !== currentIndex}
           >
