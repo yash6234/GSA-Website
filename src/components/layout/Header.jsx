@@ -21,17 +21,6 @@ const Header = () => {
     };
   }, []);
 
-  // Lock body scroll when mobile sidebar is open so closing (backdrop/X) restores scroll
-  useEffect(() => {
-    if (isMenuOpen) {
-      const prev = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      return () => {
-        document.body.style.overflow = prev;
-      };
-    }
-  }, [isMenuOpen]);
-
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Academy' },
@@ -42,6 +31,7 @@ const Header = () => {
   ];
 
   return (
+    <>
     <header
       className="sticky top-0 z-50 transition-colors duration-300 bg-transparent [.nav-scrolled_&]:bg-white/95 [.nav-scrolled_&]:backdrop-blur [.nav-scrolled_&]:shadow-md [.nav-scrolled_&]:shadow-black/5"
     >
@@ -115,55 +105,54 @@ const Header = () => {
         </nav>
 
       </div>
-
-      {/* Mobile Sidebar */}
-      <div className="md:hidden">
-        {/* Backdrop */}
-        <div
-          className={`fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
-            isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
-          onClick={() => setIsMenuOpen(false)}
-          aria-hidden
-        />
-        {/* Sidebar panel for the mobile layout */}
-        <aside
-          className={`fixed top-0 right-0 z-[70] h-full w-[min(280px,85vw)] bg-white shadow-xl transition-transform duration-300 ease-out ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-          style={{ backgroundColor: '#ffffff' }}
-          aria-label="Mobile menu"
-        >
-            <div className="flex flex-col h-full pt-20 pb-6 px-4 overflow-y-auto">
-            <button
-              className="absolute top-4 right-4 p-2 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-              aria-label="Close menu"
-            >
-              <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <nav className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`flex px-4 py-3.5 rounded-xl text-base font-semibold uppercase tracking-wide transition-all duration-200 ${
-                    isActive(link.path)
-                      ? 'bg-lime-500/15 text-gray-900 border border-lime-500/40'
-                      : 'text-gray-800 hover:bg-gray-100'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </aside>
-      </div>
     </header>
+
+    {/* Mobile Sidebar — outside header so position:fixed is always relative to viewport (no scroll/JS) */}
+    <div className="md:hidden" aria-hidden={!isMenuOpen}>
+      <div
+        className={`fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
+          isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+        aria-hidden
+      />
+      <aside
+        className={`fixed top-0 right-0 z-[70] h-full w-[min(280px,85vw)] bg-white shadow-xl transition-transform duration-300 ease-out ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        style={{ backgroundColor: '#ffffff' }}
+        aria-label="Mobile menu"
+      >
+        <div className="flex flex-col h-full pt-20 pb-6 px-4 overflow-y-auto">
+          <button
+            className="absolute top-4 right-4 p-2 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <nav className="flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex px-4 py-3.5 rounded-xl text-base font-semibold uppercase tracking-wide transition-all duration-200 ${
+                  isActive(link.path)
+                    ? 'bg-lime-500/15 text-gray-900 border border-lime-500/40'
+                    : 'text-gray-800 hover:bg-gray-100'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </aside>
+    </div>
+    </>
   );
 };
 
